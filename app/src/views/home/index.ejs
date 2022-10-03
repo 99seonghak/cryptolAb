@@ -1,0 +1,56 @@
+<!DOCTYPE html> 
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, inital-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/home/index.css">
+    <script src="js\home\index1.js" defer></script>
+    <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js'></script>
+</head>
+<body>
+    <div class="container" id="app">
+        <header>
+          <h1>DCU</h1>
+          <ul>
+            <li>어린이후원</li>
+            <li>맞춤후원</li>
+            <li>참여</li>
+            <li>소식</li>
+            <li>소개</li>
+            <li class="active">바로 후원하기</li>
+          </ul>
+        </header>
+      
+        <section>
+          <h4>바로 후원하기 > <span>다운로드</span></h4>
+        </section>
+      
+        <section>
+          <div class="card">
+            <div class="card-info">
+              <h1 id="card-info-title">{{ currentCard.title }}</h1>
+              <p id="card-info-desc">{{ currentCard.desc }}</p>
+              <a href="https://bit.ly/3xOVvz2">DOWNLOAD</a>
+      
+            </div>
+            <div class="card-photo">
+              <div id="mask-1" class="mask"></div>
+              <div id="mask-2" class="mask"></div>
+              <a href="#" @click="nextCard">
+                <p>NEXT</p>
+                <svg viewBox="0 0 20 10">
+                  <line x1="0" y1="5" x2="20" y2="5" />
+                  <line x1="15" y1="0" x2="20" y2="5" />
+                  <line x1="15" y1="10" x2="20" y2="5" />
+                </svg>
+              </a>
+              <img :src="currentCard.photo">
+            </div>
+          </div>
+        </section>
+      </div>
+</body>
+</html>
